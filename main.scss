@@ -16,12 +16,17 @@ $darkBlue2:hsl(224, 30%, 27%);
     padding:0;
     box-sizing: border-box;
 }
+:root{
+    --animate-duration: 0.9s;
+    --animate-delay: 0.2s;
+}
 h1,h2{
     line-height: 1;
 }
 a{
     text-decoration: none;
 }
+
 body{
     display: flex;
     flex-direction: column;
@@ -136,12 +141,15 @@ body{
 }
 .subject:nth-child(2){
     @include subjectDiv($orangeYellow);
+    animation-delay: calc(var(--animate-delay) * 1.2);
 }
 .subject:nth-child(3){
     @include subjectDiv($tealGreen);
+    animation-delay: calc(var(--animate-delay) * 1.4);
 }
 .subject:nth-child(4){
     @include subjectDiv($blue);
+    animation-delay: calc(var(--animate-delay) * 1.6);
 }
 .btn{
     padding:1rem 1rem;
@@ -153,6 +161,7 @@ body{
     font-family: inherit;
     color:$white;
     font-size: 1.1rem;
+    animation-delay: calc(var(--animate-delay) * 1.8);
     &:hover{
         background-image:linear-gradient(180deg,$bglightBlue,$bgroyalBlue);
     }
