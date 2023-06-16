@@ -7,7 +7,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Results summary component</title>
-
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
  <link rel="stylesheet" href="css/style.css">
   
 </head>
@@ -16,34 +19,37 @@
     <!-- score container -->
     <div class="score-container">
       <h1>Your Result</h1>
-      <div class="score">
+      <div class="score animate__animated animate__zoomIn">
         <p><span class="total-score">76</span>of 100</p>
       </div>
-      <h2>Great</h2>
-      <p>You scored higher than 65% of the people who have taken these tests.</p>
+      <div class="score-message">
+        
+        <h2 class="animate__animated animate__fadeInUp">Great</h2>
+        <p class="animate__animated animate__fadeInUp  animate__delay-1s">You scored higher than 65% of the people who have taken these tests.</p>
+      </div>
     </div>
     <!-- result summary  -->
     <div class="summary-container">
       <h3>Summary</h3>
       <div class="subjects-container">
-        <div class="subject">
+        <div class="subject animate__animated animate__fadeInUp">
           <p class="subject-name"><img src="assets/images/icon-reaction.svg" alt="" aria-hidden="true">Reaction</p>
-          <p class="subject-score"><span >80</span> / 100</p>
+          <p class="subject-score"><span>80</span> / 100</p>
         </div>
-        <div class="subject">
+        <div class="subject animate__animated animate__fadeInUp animate__delay-1s">
           <p class="subject-name"><img src="assets/images/icon-memory.svg" aria-hidden="true">Memory</p>
           <p class="subject-score"><span>92</span> / 100</p>
         </div>
-        <div class="subject">
+        <div class="subject animate__animated animate__fadeInUp animate__delay-2s">
           <p class="subject-name"><img src="assets/images/icon-verbal.svg" aria-hidden="true" alt="">Verbal</p>
           <p class="subject-score"><span>61</span> / 100</p>
         </div>
-        <div class="subject">
+        <div class="subject animate__animated animate__fadeInUp animate__delay-3s">
           <p class="subject-name"><img src="assets/images/icon-visual.svg" aria-hidden="true" alt="">Visual</p>
           <p class="subject-score"><span>72</span> / 100</p>
         </div>
       </div>
-      <div class="btn">Continue</div>
+      <div class="btn animate__animated animate__fadeInUp animate__delay-4s">Continue</div>
     </div>
   </main>
   <footer class="attribution">

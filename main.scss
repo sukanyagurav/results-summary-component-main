@@ -1,16 +1,16 @@
-    $lightRed:hsl(0, 100%, 67%);
-    $orangeYellow:hsl(39, 100%, 56%);
-    $tealGreen: hsl(166, 100%, 37%);
-    $blue:hsl(234, 85%, 45%);
-    $bglightBlue:hsl(252, 100%, 67%);
-    $bgroyalBlue:hsl(241, 81%, 54%);
-    $circleBgvioletBlue:hsla(256, 72%, 46%, 1);
-    $circleBgdarkBlue1:hsla(241, 72%, 46%, 0);
-    $white:hsl(0, 0%, 100%);
-    $lightBlue-1:hsl(221, 100%, 96%);
-    $lavender:hsl(241, 100%, 89%);
-    $darkBlue2:hsl(224, 30%, 27%);
-
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+$lightRed:hsl(0, 100%, 67%);
+$orangeYellow:hsl(39, 100%, 56%);
+$tealGreen: hsl(166, 100%, 37%);
+$blue:hsl(234, 85%, 45%);
+$bglightBlue:hsl(252, 100%, 67%);
+$bgroyalBlue:hsl(241, 81%, 54%);
+$circleBgvioletBlue:hsla(256, 72%, 46%, 1);
+$circleBgdarkBlue1:hsla(241, 72%, 46%, 0);
+$white:hsl(0, 0%, 100%);
+$lightBlue-1:hsl(221, 100%, 96%);
+$lavender:hsl(241, 100%, 89%);
+$darkBlue2:hsl(224, 30%, 27%);
 *{
     margin:0;
     padding:0;
@@ -26,6 +26,7 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: 'Hanken Grotesk', sans-serif;
     @media (min-width:600px) {
         align-items: center;
         justify-content: center;
@@ -33,36 +34,42 @@ body{
 }
 .container{
     width:100%;
-    max-width:610px;
+    max-width:700px;
     display: flex;
     flex-direction: column;
     background-color: $white;
     @media (min-width:600px) {
+        --shadow-color: 0deg 0% 0%;
         flex-direction: row;
-        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 10px -20px;
-        border-radius:30px ;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius:30px;
     }
 }
 .score-container{
-    padding:2rem;
     background-image:linear-gradient(189deg,$bglightBlue,$bgroyalBlue);
     border-radius:0 0 30px 30px;
     color:$lavender;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap:1rem;
+    gap:2rem;
     align-items: center;
     text-align: center;
+    flex-basis: 50%;
+    padding: 2rem 3.8rem;
     h1{
         font-size: 1.25rem;
-    }
-    h2{
-        font-size:2rem;
-        color:$white;
+        font-weight: 500;
     }
    @media (min-width:600px) {
+        
         border-radius: 30px 30px;
+    }
+    .score-message{
+        h2{
+            font-size:1.5rem;
+            color:$white;
+            margin-bottom: 1rem;
+        }
     }
 }
 .score{
@@ -73,18 +80,18 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 130px;
-    width:130px;
+    height: 200px;
+    width:200px;
     .total-score{
         display: block;
         color:$white;
-        font-size: 3rem;
+        font-size: 4rem;
+        font-weight: 800;
     }
-    
 }
 .summary-container{
     padding:1.8rem 2.2rem;
-    width: 100%;
+    flex-basis: 50%;
     h3{
         font-size: 1.4rem;
         color:$darkBlue2;
@@ -92,13 +99,11 @@ body{
     }
     @media(min-width: 600px){
         border-radius:  0 30px 30px 0;
-        padding:2rem  2rem;
-        max-width: 400px;
-        
+        padding:2rem;
     }
 }
 @mixin subjectDiv($color){
-    background-color:  hsla(hue($color), saturation($color), lightness($color), 0.08 );
+    background-color: hsla(hue($color), saturation($color), lightness($color), 0.09 );
     color:$color;
 }
 .subjects-container{
@@ -110,8 +115,7 @@ body{
         display: flex;
         justify-content:space-between;
         align-items: center;
-        border-radius:15px;
-        
+        border-radius:10px;
         .subject-name{
             display: flex;
             gap:0.5rem;
@@ -119,14 +123,13 @@ body{
             justify-content: center;
         }
         .subject-score{
-           
-                color:$darkBlue2;
-        
-           
+            font-weight: 800;
+            color: $lavender;
+            span{
+                color:$darkBlue2;  
+            }
         }
     }
-   
-    
 }
 .subject:nth-child(1){
     @include subjectDiv($lightRed);
@@ -140,10 +143,26 @@ body{
 .subject:nth-child(4){
     @include subjectDiv($blue);
 }
+.btn{
+    padding:1rem 1rem;
+    background: $darkBlue2;
+    border-radius: 50px;
+    text-align: center;
+    margin-top:1.5rem;
+    cursor: pointer;
+    font-family: inherit;
+    color:$white;
+    font-size: 1.1rem;
+    &:hover{
+        background-image:linear-gradient(180deg,$bglightBlue,$bgroyalBlue);
+    }
+}
+
 footer{
     padding:2rem;
     color:$darkBlue2;
     font-size: 1.2rem;
+    text-align: center;
     a{
         color:$darkBlue2;  
     }
